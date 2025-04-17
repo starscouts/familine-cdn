@@ -1,0 +1,337 @@
+/*
+ * MIT License
+ *
+ * Copyright (c) 2022- Minteck
+ *
+ * Permission is hereby granted, free of charge, to any person obtaining a copy
+ * of this software and associated documentation files (the "Software"), to deal
+ * in the Software without restriction, including without limitation the rights
+ * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+ * copies of the Software, and to permit persons to whom the Software is
+ * furnished to do so, subject to the following conditions:
+ *
+ * The above copyright notice and this permission notice shall be included in all
+ * copies or substantial portions of the Software.
+ *
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+ * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+ * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+ * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+ * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+ * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+ * SOFTWARE.
+ *
+ */
+
+/* Dark Theme */
+@import "../../dark.css";
+
+@font-face {
+    font-family: "Nunito";
+    src: url("/fonts/Nunito-VariableFont_wght.ttf");
+    font-weight: 125 950;
+    font-stretch: 75% 125%;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Nunito";
+    src: url("/fonts/Nunito-Italic-VariableFont_wght.ttf");
+    font-weight: 125 950;
+    font-stretch: 75% 125%;
+    font-style: italic;
+}
+
+* {
+    font-family: "Nunito", sans-serif !important;
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+}
+
+#copyright {
+    float: right;
+    vertical-align: middle;
+    display: inline-block;
+    position: fixed;
+    top: 8px;
+    opacity: .5;
+    right: 32px;
+}
+
+#user {
+    float: right;
+    vertical-align: middle;
+    display: inline-block;
+    position: fixed;
+    top: 5px;
+    right: 32px;
+}
+
+/* Loader */
+#loading {
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    z-index: 999999;
+    background: #222;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+
+}
+
+.progress {
+    position: fixed;
+    left: 35%;
+    top: 65%;
+    height: 5px;
+    z-index: 99999999;
+    background-color: rgba(255, 255, 255, .25);
+    right: 35%;
+    border-radius: 1000px;
+}
+
+.bar {
+    background-color: rgba(255, 255, 255, .25);
+    width: 0%;
+    height: 5px;
+    border-radius: 1000px;
+}
+
+.percent {
+    position: absolute;
+    display: inline-block;
+    top: 3px;
+    left: 48%;
+}
+
+/* Tabs */
+#tabs {
+    background: whitesmoke;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    width: 100vw;
+}
+
+#tabs img {
+    width: 36px;
+    vertical-align: middle;
+    filter: invert(0);
+    transition: width 200ms, filter 200ms;
+}
+
+#tabs .tab {
+    border-bottom: 1px solid;
+    border-bottom-color: transparent;
+    text-align: center;
+    margin: 8px 8px 0;
+    padding-bottom: 8px;
+    cursor: pointer;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: border-bottom-color 200ms;
+}
+
+#tabs .tab.tab-active img {
+    width: 48px;
+}
+
+#tabs .tab.tab-active {
+    border-bottom-color: black;
+}
+
+#panes, .pane {
+    position: fixed;
+    top: 98px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+
+.pane {
+    display: none;
+}
+
+/* IFrame */
+.loader {
+    background: rgba(255, 255, 255, .75);
+    top: 98px;
+    bottom: 0;
+    position: fixed;
+    left: 0;
+    right: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 999999;
+    cursor: wait;
+}
+
+.loader img {
+    height: 96px;
+    width: 96px;
+}
+
+.frame {
+    border: none;
+    width: 100%;
+    height: 100%;
+}
+
+/* Home */
+.home-grid {
+    display: grid;
+    grid-template-columns: 96px 1fr;
+    grid-column-gap: 10px;
+}
+
+.home-grid > * {
+    display: flex;
+    align-items: center;
+}
+
+/* Bootstrap Fixes */
+.dropdown-item {
+    cursor: pointer;
+}
+
+.list-group {
+    margin-bottom: 10px !important;
+}
+
+/* Responsiveness */
+@media (max-width: 550px) {
+    #copyright {
+        display: none;
+    }
+}
+
+#explore {
+    text-align: center;
+    height: max-content;
+    margin-top: 32px;
+    padding-top: 25vh;
+    padding-bottom: 5vh;
+    background-color: rgba(0, 0, 0, .5);
+}
+
+#explore-outer {
+    background-image: url("/intro.jpg");
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+#explore-grid {
+    margin-left: auto;
+    margin-right: auto;
+    width: max-content;
+    display: grid;
+    grid-template-columns: 120px 120px 120px 120px 120px 120px 120px 120px 120px;
+}
+
+#explore-grid.admin {
+    grid-template-columns: 120px 120px 120px 120px 120px 120px 120px 120px 120px 120px;
+}
+
+@media (max-width: 800px) {
+    .explore-description {
+        display: none !important;
+    }
+
+    #explore-grid {
+        display: grid;
+        grid-template-columns: 120px 120px;
+    }
+
+    #explore-grid.admin {
+        grid-template-columns: 120px 120px 120px;
+    }
+}
+
+.explore-btn {
+    color: white;
+    border-radius: 5px;
+    padding: 5px;
+    text-align: left;
+    display: block;
+    text-decoration: none;
+    border: 1px solid transparent;
+}
+
+.explore-btn:hover {
+    background: rgba(255, 255, 255, .25);
+    border: 1px solid gray;
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+}
+
+.explore-btn:active, .explore-btn:focus {
+    background: rgba(255, 255, 255, .5);
+    border: 1px solid white;
+    -webkit-backdrop-filter: blur(5px);
+}
+
+.explore-btn {
+    color: white !important;
+    text-decoration: none !important;
+}
+
+.explore-btn:hover {
+    background: rgba(0, 0, 0, 0.25);
+    box-shadow: 1px 5px 12px rgba(0, 0, 0, 0.25);
+}
+
+.explore-btn:active, .explore-btn:focus {
+    background: rgba(0, 0, 0, .5);
+    box-shadow: 1px 5px 12px rgba(0, 0, 0, .5);
+}
+
+@media (prefers-color-scheme: light) {
+    #data-loader-img {
+        filter: none !important;
+    }
+}
+
+.explore-description {
+    color: white;
+    opacity: 0;
+    display: inline-block;
+    margin-left: 5px;
+}
+
+.explore-btn:hover .explore-description, .explore-btn:focus .explore-description, .explore-btn:active .explore-description {
+    opacity: .5 !important;
+}
+
+.jumbotron {
+    border: 1px solid #444;
+    background: #151515;
+    padding: 10px;
+}
+
+@media (prefers-color-scheme: light) {
+    .jumbotron {
+        border: 1px solid #ccc !important;
+        background: #eee !important;
+        padding: 10px !important;
+    }
+}
+
+.news-link {
+    color: inherit;
+    cursor: pointer;
+}
+
+.news-link:hover {
+    color: inherit;
+}

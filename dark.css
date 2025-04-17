@@ -1,0 +1,96 @@
+@media (prefers-color-scheme: dark) {
+
+    html, body {
+        background: black !important;
+        color: white !important;
+    }
+
+    #statusbar, #tabs {
+        background: #222 !important;
+        color: white !important;
+    }
+
+    .tab:not(.tab-active) img {
+        filter: invert(1) !important;
+    }
+
+    .loader {
+        background: rgba(10, 10, 10, .75) !important;
+    }
+
+    .loader img {
+        filter: invert(1) !important;
+    }
+
+    #tabs .tab.tab-active {
+        border-bottom-color: white !important;
+    }
+
+    .list-group-item {
+        background-color: #151515 !important;
+    }
+
+    .btn-light {
+        background: transparent !important;
+        color: white !important;
+    }
+
+    .dropdown-menu {
+        filter: invert(1) !important;
+    }
+
+    #panes {
+        background: black !important;
+    }
+
+    .list-group-item-action {
+        color: white !important;
+    }
+
+    .modal-content {
+        background-color: #151515 !important;
+    }
+
+    .modal-header button.close {
+        filter: invert(1) !important;
+    }
+
+    .modal-header {
+        border-bottom: 1px solid #222 !important;
+    }
+
+    .modal-footer {
+        border-top: 1px solid #222 !important;
+    }
+
+    #radio-bar {
+        background-color: whitesmoke !important;
+        color: black !important;
+        filter: invert(1) !important;
+    }
+
+    #radio-bar .badge {
+        filter: invert(1) !important;
+    }
+
+    .window-btn {
+        border-color: #333 !important;
+    }
+
+    .window-btn img {
+        filter: invert(1);
+    }
+
+    .window-btn:hover {
+        background: rgba(0, 0, 0, .25);
+    }
+
+    .window-btn:active {
+        background: rgba(0, 0, 0, .5);
+    }
+
+    hr {
+        border-top: 1px solid rgba(255, 255, 255, .1) !important;
+    }
+
+}
